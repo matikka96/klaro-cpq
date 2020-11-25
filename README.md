@@ -1,5 +1,5 @@
 
-Live demo
+Live demo: https://matikka96.github.io/klaro-cpq/
 
 ## Assignment
 Build a books search. Using your service, users should be able to: 
