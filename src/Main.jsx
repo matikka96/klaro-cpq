@@ -37,13 +37,13 @@ export default class Main extends Component {
     return (
       <div className="container">
         <header className="text-center py-4">
-          <h1>Book search</h1>
-
+          <h1 className="py-2">Book search</h1>
           <input
             className="form-control mx-auto shadow"
             type="search"
             placeholder="Search books by name or author"
             onChange={this.updateSearchQuery}
+            autoFocus
           />
         </header>
         <main>
@@ -70,36 +70,34 @@ export default class Main extends Component {
                     <h5 className="mt-0 mb-1">
                       {book.volumeInfo.title}
                       {book.volumeInfo.authors ? (
-                        <small> by {book.volumeInfo.authors.join(", ")} </small>
+                        <small className="font-italic">
+                          {" "}
+                          by {book.volumeInfo.authors.join(", ")}{" "}
+                        </small>
                       ) : null}
                     </h5>
-                    <p className="text-justify" style={{ maxHeight: "90px", overflowY: "hidden" }}>
+                    <p
+                      className="text-justify text-dark"
+                      style={{ maxHeight: "90px", overflowY: "hidden" }}
+                    >
                       {book.volumeInfo.description}
                     </p>
-                    <div className="">
+                    <ul className="list-unstyled">
                       {book.volumeInfo.previewLink ? (
-                        <a
-                          className="btn btn-secondary btn-sm"
-                          target="_blank"
-                          rel="noreferrer"
-                          href={book.volumeInfo.previewLink}
-                          role="button"
-                        >
-                          Preview
-                        </a>
+                        <li>
+                          <a target="_blank" rel="noreferrer" href={book.volumeInfo.previewLink}>
+                            Open preview
+                          </a>
+                        </li>
                       ) : null}
                       {book.volumeInfo.infoLink ? (
-                        <a
-                          className="btn btn-primary btn-sm ml-2"
-                          target="_blank"
-                          rel="noreferrer"
-                          href={book.volumeInfo.infoLink}
-                          role="button"
-                        >
-                          Info
-                        </a>
+                        <li>
+                          <a target="_blank" rel="noreferrer" href={book.volumeInfo.infoLink}>
+                            More info
+                          </a>
+                        </li>
                       ) : null}
-                    </div>
+                    </ul>
                   </div>
                 </li>
               ))}
