@@ -11,7 +11,8 @@ Build a books search. Using your service, users should be able to:
 * Bootstrap
 
 ## Environment requirements
-* Node (tested on version 14)
+* Node.js (tested on version 14)
+* NPM (package manager)
 
 ## Local installation
 Clone repository, navigate to its directory and run:
