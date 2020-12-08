@@ -8,7 +8,7 @@ Build a books search. Using your service, users should be able to:
 
 ## Tech stack
 * React.js
-* Bootstrap
+* Spectre.css
 
 ## Environment requirements
 * Node (tested on version 14)
